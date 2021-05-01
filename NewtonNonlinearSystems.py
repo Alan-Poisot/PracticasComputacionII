@@ -127,7 +127,7 @@ def swap(m,n,x):
 
 def main():
     # number of eqs and vars
-    n = 3
+    n = 4
 
     # Definición de objetos
     jac = Jacobian(n)
@@ -146,6 +146,7 @@ def main():
     F.append(3*Xsymb[0] - cos(Xsymb[1]*Xsymb[2]) - 1/2)
     F.append(Xsymb[0]**2 - 81*(Xsymb[1] + 0.1)**2 + sin(Xsymb[2]) + 1.06)
     F.append(np.e**(-Xsymb[0]*Xsymb[1]) + 20* Xsymb[2] + ((10 * np.pi) -3) /3)
+    F.append(Xsymb[2]*(Xsymb[3]*3-ln(2*Xsymb[0])))
 
     # Se instancia el método para generar la matriz Jac simbólica
     J = jac.generateJacobianMat(Xsymb, F)
