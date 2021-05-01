@@ -26,14 +26,14 @@ class Jacobian():
     def evaluateF(self, Xsymb, F, X0):
         F1 = np.ndarray(self.n)
         for i in range(self.n):
-            F1[i] = F[i].subs({Xsymb[0]:X0[0], Xsymb[1]:X0[1], Xsymb[2]:X0[2]})
+            F1[i] = F[i].subs(dict(zip(Xsymb,X0)))
         return F1
 
     def evaluateJ(self, J, X0, Xsymb):
         JNum = np.zeros(shape=(self.n, self.n))
         for i in range(self.n):
             for j in range(self.n):
-                JNum[i][j] = J[i][j].subs({Xsymb[0]:X0[0], Xsymb[1]:X0[1], Xsymb[2]:X0[2]})
+                JNum[i][j] = J[i][j].subs(dict(zip(Xsymb,X0)))
         return JNum
 
 
