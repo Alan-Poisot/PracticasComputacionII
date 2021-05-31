@@ -200,11 +200,8 @@ def main():
         graph.plotLine(Reg[i], X[0], X[-1], str("Grado " + str(order[i])))
         sme=ls.squareMeanError(X, Y, Reg[i])
         print("Error cuadrático medio y coeficiente de determinación grado "+str(order[i])+": ", sme,", ",ls.determinationCoef(X, Y, Reg[i],sme))
-    
 
     graph.displayPlot()
-
-    # Probar regresión de
 
 if __name__ == "__main__":
     main()
